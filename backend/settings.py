@@ -103,7 +103,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+# WSGI_APPLICATION = 'backend.wsgi.application'
 ASGI_APPLICATION = 'backend.asgi.application'
 
 # Database
@@ -206,7 +206,10 @@ CORS_ALLOW_CREDENTIALS = True
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
-INTERNAL_IPS="127.0.0.1"
+INTERNAL_IPS = (
+    '127.0.0.1',
+    'localhost:8000'
+)
 
 GOOGLE_OAUTH_REDIRECT_URI='http://localhost:3000/google/callback/'
 GOOGLE_OAUTH_CLIENT_ID=str(os.getenv('GOOGLE_OAUTH_CLIENT_ID'))
