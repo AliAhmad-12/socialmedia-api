@@ -11,8 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-# SECRET_KEY =str(os.getenv('SECRET_KEY'))
-SECRET_KEY ='django-insecure-cbn5^p5!da%ms6wo5z*#kk%zw=prr*1da7d+)7x1y=0gbnc8h-'
+SECRET_KEY =str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -210,8 +209,8 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 INTERNAL_IPS="127.0.0.1"
 
 GOOGLE_OAUTH_REDIRECT_URI='http://localhost:3000/google/callback/'
-GOOGLE_OAUTH_CLIENT_ID="319596095714-rll4436221fv1rbn7i0agciuve3ppbgj.apps.googleusercontent.com"
-GOOGLE_OAUTH_CLIENT_SECRET='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'
+GOOGLE_OAUTH_CLIENT_ID=str(os.getenv('GOOGLE_OAUTH_CLIENT_ID'))
+GOOGLE_OAUTH_CLIENT_SECRET=str(os.getenv('GOOGLE_OAUTH_CLIENT_SECRET'))
 
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"  # Use Email / Password authentication
