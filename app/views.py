@@ -137,6 +137,7 @@ class ChangePasswordView(APIView):
 
 class IsAuthenticatedView(APIView):
     def get(self,request):
+        
         access_token=request.COOKIES.get('access_token')
         if not access_token:
             return Response({'is_authenticated':False},status=status.HTTP_401_UNAUTHORIZED)
@@ -150,6 +151,7 @@ class IsAuthenticatedView(APIView):
             return Response({'is_authenticated':False},status=status.HTTP_401_UNAUTHORIZED)
 
 
+    
 
 class Logout(APIView):
     # permission_classes=[IsAuthenticated]
